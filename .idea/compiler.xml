@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AntRanger" />
+        <module name="SpringLei" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AntRanger" target="1.8" />
+      <module name="SpringLei" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

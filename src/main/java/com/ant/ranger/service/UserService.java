@@ -1,6 +1,10 @@
 package com.ant.ranger.service;
 
+import com.ant.ranger.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+
+import java.util.List;
 
 /**
  * @packgeName: com.ant.ranger.service
@@ -12,6 +16,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @version: 1.0
  * @since: JDK 1.8
  */
-public interface UserService extends UserDetailsService{
-
+public interface UserService extends ClientDetailsService{
+    List<User> findAllUsers();
 }

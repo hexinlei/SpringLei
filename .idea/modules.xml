@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AntRanger.iml" filepath="$PROJECT_DIR$/AntRanger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringLei/SpringLei.iml" filepath="$PROJECT_DIR$/SpringLei/SpringLei.iml" />
     </modules>
   </component>
 </project>

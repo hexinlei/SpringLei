@@ -1,5 +1,6 @@
 package com.ant.ranger.service.impl;
 
+import com.ant.ranger.bean.MyClientDetails;
 import com.ant.ranger.bean.MyUserPrincipal;
 import com.ant.ranger.model.User;
 import com.ant.ranger.repository.UserRepository;
@@ -7,7 +8,11 @@ import com.ant.ranger.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @packgeName: com.ant.ranger.service.impl
@@ -20,17 +25,32 @@ import org.springframework.stereotype.Service;
  * @since: JDK 1.8
  */
 @Service(value = "userService")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
 
+//    @Override
+//    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+//        User user = userRepository.findUserByUid(s);
+//        if (null == user) {
+//            throw new UsernameNotFoundException("用户名不存在");
+//        }
+//        return new MyUserPrincipal(user);
+//    }
+
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    public List<User> findAllUsers() {
+        return null;
+    }
+
+    @Override
+    public ClientDetails loadClientByClientId(String s) throws ClientRegistrationException {
+
         User user = userRepository.findUserByUid(s);
         if (null == user) {
             throw new UsernameNotFoundException("用户名不存在");
         }
-        return new MyUserPrincipal(user);
+        return new MyClientDetails(user);
     }
 }

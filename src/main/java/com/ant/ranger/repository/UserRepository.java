@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.Table;
+import java.util.List;
 
 /**
  * @packgeName: com.ant.ranger.AntRanger.repository
@@ -26,4 +27,7 @@ public interface UserRepository extends CrudRepository<User,String>{
 
     @Query("select u from User u where u.uid =:uid")
     User findUserByUid(@Param("uid") String uid);
+
+    @Query("select u from User u ")
+    List<User> findAllUser();
 }
